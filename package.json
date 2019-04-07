@@ -1,0 +1,8 @@
+{
+    "name": "com.unity.extras",
+    "displayName": "Unity3D Extras",
+    "version": "0.0.1",
+    "unity": "2018.3",
+    "description": "Commonly used extensions for Unity3D projects",
+    "category": "Unity"
+}
