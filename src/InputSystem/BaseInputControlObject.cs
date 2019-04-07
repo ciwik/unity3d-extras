@@ -1,4 +1,4 @@
-using System;
+using Extras.Diagnostics;
 using UnityEngine;
 
 namespace Extras.InputSystem
@@ -8,11 +8,11 @@ namespace Extras.InputSystem
     {
         protected void Setup(InputBindings bindings)
         {
+            Guard.NotNull(bindings);
+
             var inputController = GetComponent<BaseInputController>();
-            if (inputController == null)
-            {
-                throw new NullReferenceException();
-            }
+            Guard.NotNull(inputController);
+
             inputController.Setup(bindings);
         }
     }
