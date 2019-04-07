@@ -14,7 +14,7 @@ namespace Extras.Extensions
         // Returns a cross product of two vectors
         public static Vector3 Cross(this Vector3 v3, Vector3 other) => Vector3.Cross(v3, other);
 
-        // Returns a minimal component of the vector
+        // Returns a minimal component of vector
         public static float Min(this Vector2 v2) => Mathf.Min(v2.x, v2.y);
         public static float Min(this Vector3 v3) => Mathf.Min(v3.x, Mathf.Min(v3.y, v3.z));
 
