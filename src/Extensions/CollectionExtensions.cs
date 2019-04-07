@@ -17,6 +17,6 @@ namespace Extras.Extensions
         public static bool IsNotEmpty<T>(this T[] array) => array != null && array.Length != 0;
 
         // Returns a read-only copy of list
-        public static IReadOnlyCollection<T> ToReadOnly<T>(this IList<T> list) => new ReadOnlyCollection<T>(list);
+        public static IReadOnlyCollection<T> AsReadOnly<T>(this IList<T> list) => new ReadOnlyCollection<T>(list);
     }
 }
