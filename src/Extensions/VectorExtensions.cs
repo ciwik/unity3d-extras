@@ -25,5 +25,15 @@ namespace Extras.Extensions
         // Checks that vector length is close to zero
         public static bool IsZero(this Vector2 v2) => v2 == Vector2.zero || Vector2.SqrMagnitude(v2) < float.Epsilon;
         public static bool IsZero(this Vector3 v3) => v3 == Vector3.zero || Vector3.SqrMagnitude(v3) < float.Epsilon;
+
+        // Returns copy of vector with changed component
+        public static Vector2 X(this Vector2 v2, float x) => new Vector2(x, v2.y);
+        public static Vector3 X(this Vector3 v3, float x) => new Vector3(x, v3.y, v3.z);
+        public static Vector2 Y(this Vector2 v2, float y) => new Vector2(v2.x, y);
+        public static Vector3 Y(this Vector3 v3, float y) => new Vector3(v3.x, y, v3.z);
+        public static Vector3 Z(this Vector3 v3, float z) => new Vector3(v3.x, v3.y, z);
+        public static Vector3 XY(this Vector3 v3, float x, float y) => new Vector3(x, y, v3.z);
+        public static Vector3 XZ(this Vector3 v3, float x, float z) => new Vector3(x, v3.y, z);
+        public static Vector3 YZ(this Vector3 v3, float y, float z) => new Vector3(v3.x, y, z);
     }
 }
