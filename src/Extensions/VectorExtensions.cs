@@ -23,8 +23,8 @@ namespace Extras.Extensions
         public static float Max(this Vector3 v3) => Mathf.Max(v3.x, Mathf.Max(v3.y, v3.z));
 
         // Checks that vector length is close to zero
-        public static bool IsZero(this Vector2 v2) => v2 == Vector2.zero || Vector2.SqrMagnitude(v2) < float.Epsilon;
-        public static bool IsZero(this Vector3 v3) => v3 == Vector3.zero || Vector3.SqrMagnitude(v3) < float.Epsilon;
+        public static bool IsZero(this Vector2 v2) => v2 == Vector2.zero || Vector2.SqrMagnitude(v2) < 2f * float.Epsilon;
+        public static bool IsZero(this Vector3 v3) => v3 == Vector3.zero || Vector3.SqrMagnitude(v3) < 2f * float.Epsilon;
 
         // Returns copy of vector with changed component
         public static Vector2 X(this Vector2 v2, float x) => new Vector2(x, v2.y);
