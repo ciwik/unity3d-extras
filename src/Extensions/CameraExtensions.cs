@@ -30,6 +30,15 @@ namespace Extras.Extensions
             return texture;
         }
 
+        public static Vector2 GetViewSize(this Camera camera)
+        {
+            var ratio = camera.pixelWidth / (float) camera.pixelHeight;
+            return new Vector2(
+                camera.orthographicSize * ratio,
+                camera.orthographicSize / ratio
+            );
+        }
+
         // Default values
         private const int DEFAULT_COLOR_DEPTH = 24;
         private const TextureFormat DEFAULT_TEXTURE_FORMAT = TextureFormat.RGB24;
