@@ -6,16 +6,16 @@ namespace Extras.Serialization
     public static class JsonCoder
     {
         // Returns object from JSON string
-        public static T FromJson<T>(string json, JsonSerializerSettings settings) =>
-            (T) JsonConvert.DeserializeObject(json, typeof(T), settings);
+        public static T FromJson<T>(string json, JsonSerializerSettings settings = null) =>
+            (T) JsonConvert.DeserializeObject(json, typeof(T), settings ?? new JsonSerializerSettings());
         public static T FromCamelCaseJson<T>(string json) =>
             (T) JsonConvert.DeserializeObject(json, typeof(T), _camelCaseSettings);
         public static T FromSnakeCaseJson<T>(string json) =>
             (T) JsonConvert.DeserializeObject(json, typeof(T), _snakeCaseSettings);
 
         // Returns JSON string from object
-        public static string ToJson<T>(T obj, JsonSerializerSettings settings, Formatting formatting = Formatting.Indented) =>
-            JsonConvert.SerializeObject(obj, formatting, settings);
+        public static string ToJson<T>(T obj, JsonSerializerSettings settings = null, Formatting formatting = Formatting.Indented) =>
+            JsonConvert.SerializeObject(obj, formatting, settings ?? new JsonSerializerSettings());
         public static string ToCamelCaseJson<T>(T obj, Formatting formatting = Formatting.Indented) =>
             JsonConvert.SerializeObject(obj, formatting, _camelCaseSettings);
         public static string ToSnakeCaseJson<T>(T obj, Formatting formatting = Formatting.Indented) =>
