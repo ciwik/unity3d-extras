@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Extras.Serialization.Json
 {
-    public sealed class JsonSerializer : IDisposable
+    internal sealed class JsonSerializer : IDisposable
     {
         public JsonSerializer() => _jsonBuilder = new StringBuilder();
 

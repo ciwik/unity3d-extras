@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,18 +6,9 @@ namespace Extras.Serialization.Json
     public static class JsonCoder
     {
         // Returns object from JSON string
-        public static T FromJson<T>(string json)
-        {
-            if (typeof(T) == typeof(Dictionary<string, object>))
-            {
-                var dict = FromJsonToDictionary(json);
-                return (T) Convert.ChangeType(dict, typeof(T));
-            }
+        public static T FromJson<T>(string json) => JsonUtility.FromJson<T>(json);
 
-            return JsonUtility.FromJson<T>(json);
-        }
-
-        private static Dictionary<string, object> FromJsonToDictionary(string json)
+        public static Dictionary<string, object> FromJson(string json)
         {
             using (var parser = new JsonParser(json))
             {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Extras.Serialization.Json
 {
-    public sealed class JsonParser : IDisposable
+    internal sealed class JsonParser : IDisposable
     {
         public JsonParser(string json) => _jsonReader = new StringReader(json);
 
